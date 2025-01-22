@@ -77,6 +77,7 @@ Static library composed out of functions from the Standard C Library with my own
 #### ft_atoi
 #### ft_calloc
 </details>
+
 ### Others
 ## Restrictions applied:
 - Cannot use functions from other libraries
