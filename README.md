@@ -11,31 +11,31 @@ Static library composed out of functions from the Standard C Library with my own
 #### isalnum
 <details open>
 <summary>Description</summary>
-Checks for an alphanumeric character, it is equivalent to (isalpha(c) || isdigit(c)).
+    Checks for an alphanumeric character, it is equivalent to (isalpha(c) || isdigit(c)).
 </details>
 		
 #### isalpha
 <details open>
 <summary>Description</summary>
-Checks  for  an  alphabetic  character; either upper or lower case
+    Checks  for  an  alphabetic  character; either upper or lower case
 </details>
 
 #### isdigit
 <details open>
 <summary>Description</summary>
-Checks for a digit (0 through 9).
+    Checks for a digit (0 through 9).
 </details>
 
 #### isascii
 <details open>
 <summary>Description</summary>
-Checks whether c is a 7-bit unsigned char value that fits into the ASCII character set.
+    Checks whether c is a 7-bit unsigned char value that fits into the ASCII character set.
 </details>
 
 #### isprint
 <details open>
 <summary>Description</summary>
-Checks for any printable character including space.
+    Checks for any printable character including space.
 </details>
 
 #### toupper
@@ -51,7 +51,7 @@ Checks for any printable character including space.
 </details>
 
 ### string.h // strings.h
-<details open>
+<details>
 <summary>See fuctions</summary>
 	
 #### bzero
