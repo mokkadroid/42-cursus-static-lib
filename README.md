@@ -21,13 +21,17 @@ toupper
 tolower
 <\details>
 
-<details>
-<summary>string.h // strings.h</summary>
+<details><summary>string.h // strings.h</summary>
 	bzero
+	
 	memchr
+ 
 	memcmp
+ 
 	memcpy
+ 
 	memmove
+ 
 	memset
 	strlcat
 	strlcpy
@@ -36,14 +40,12 @@ tolower
 	strnstr
 	strncmp
 	strrchr
-	strup
-<\details>
+	strup<\details>
 
-<details>
-<summary>stdlib.h</summary>
+<details><summary>stdlib.h</summary>
 	atoi
-	calloc
-<\details>
+	
+	calloc<\details>
 
 ## Restrictions applied:
 - Cannot use functions from other libraries
