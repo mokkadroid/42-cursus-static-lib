@@ -5,7 +5,7 @@ Static library composed out of functions from the Standard C Library with my own
 
 ## Functions
 <details>
-### <summary>ctype.h</summary>
+<summary>ctype.h</summary>
 		
 		isalpha
 		isdigit
@@ -17,7 +17,7 @@ Static library composed out of functions from the Standard C Library with my own
 </details>
 
 <details>
-### <summary>string.h // strings.h</summary>
+<summary>string.h // strings.h</summary>
 	
 	bzero
 	memchr
@@ -36,7 +36,7 @@ Static library composed out of functions from the Standard C Library with my own
 </details>
 
 <details>
-### <summary>stdlib.h</summary>
+<summary>stdlib.h</summary>
 	
 	atoi
 	calloc
