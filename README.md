@@ -4,10 +4,8 @@
 Static library composed out of functions from the Standard C Library with my own code implementation.
 
 ## Functions
-### ctype.h
 <details>
-	
-<summary>See functions</summary>
+<summary>ctype.h</summary>
 		
 		isalpha
 		isdigit
@@ -18,9 +16,8 @@ Static library composed out of functions from the Standard C Library with my own
 		tolower
 </details>
 
-### string.h // strings.h
 <details>
-<summary>See functions</summary>
+<summary>string.h // strings.h</summary>
 	
 	bzero
 	memchr
@@ -38,9 +35,8 @@ Static library composed out of functions from the Standard C Library with my own
 	strup
 </details>
 
-### stdlib.h
 <details>
-<summary>See functions</summary>
+<summary>stdlib.h</summary>
 	
 	atoi
 	calloc
