@@ -10,14 +10,13 @@ Static library composed out of functions from the Standard C Library with my own
 
 #### isalnum
 <details open>
-<summary>Description</summary>
-        Checks for an alphanumeric character, it is equivalent to (isalpha(c) || isdigit(c)).
+<summary>Description</summary>Checks for an alphanumeric character, equivalent to (isalpha(c) || isdigit(c)).
 </details>
 		
 #### isalpha
 <details open>
 <summary>Description</summary>
-        Checks  for  an  alphabetic  character; either upper or lower case
+        Checks  for  an  alphabetic  character, either upper or lower case
 </details>
 
 #### isdigit
