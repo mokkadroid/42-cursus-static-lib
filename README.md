@@ -6,40 +6,73 @@ Static library composed out of functions from the Standard C Library with my own
 ## Functions
 <details>
 <summary>ctype.h</summary>
+
+### isalnum
+<details>
+<summary>See description</summary>
+Checks for an alphanumeric character, it is equivalent to (isalpha(c) || isdigit(c)).
+</details>
 		
-		isalpha
-		isdigit
-		isalnum
-		isascii
-		isprint
-		toupper
-		tolower
+### isalpha
+<details>
+<summary>See description</summary>
+Checks  for  an  alphabetic  character; either upper or lower case
+</details>
+
+### isdigit
+<details>
+<summary>See description</summary>
+Checks for a digit (0 through 9).
+</details>
+
+### isascii
+<details>
+<summary>See description</summary>
+Checks whether c is a 7-bit unsigned char value that fits into the ASCII character set.
+</details>
+
+### isprint
+<details>
+<summary>See description</summary>
+Checks for any printable character including space.
+</details>
+
+### toupper
+<details>
+<summary>See description</summary>
+</details>
+
+### tolower
+<details>
+<summary>See description</summary>
+</details>
+
 </details>
 
 <details>
 <summary>string.h // strings.h</summary>
 	
-	bzero
-	memchr
-	memcmp
-	memcpy
-	memmove
-	memset
-	strlcat
-	strlcpy
-	strlen
-	strchr
-	strnstr
-	strncmp
-	strrchr
-	strup
+### bzero
+### memchr
+### memcmp
+### memcpy
+### memmove
+### memset
+### strlcat
+### strlcpy
+### strlen
+### strchr
+### strnstr
+### strncmp
+### strrchr
+### strup
 </details>
 
 <details>
 <summary>stdlib.h</summary>
 	
-	atoi
-	calloc
+### atoi
+### calloc
 </details>
 
 ## Restrictions applied:
