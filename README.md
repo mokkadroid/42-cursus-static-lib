@@ -16,7 +16,9 @@ Static C library composed of functions from stdlib.h, string.h, strings.h and ct
 	tolower
 <\details>
 
-<details><summary>string.h // strings.h</summary>
+
+<details>
+<summary>string.h // strings.h</summary>
 	
 	bzero
 	memchr
@@ -34,11 +36,12 @@ Static C library composed of functions from stdlib.h, string.h, strings.h and ct
 	strup
 <\details>
 
-<details><summary>stdlib.h</summary>
+
+<details>
+<summary>stdlib.h</summary>
 	
 	atoi
 	calloc
- 
 <\details>
 
 ## Restrictions applied:
