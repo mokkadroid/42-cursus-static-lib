@@ -16,36 +16,35 @@ Static library composed out of functions from the Standard C Library with my own
 		isprint
 		toupper
 		tolower
-  
-<\details>
+</details>
 
 ### string.h // strings.h
-	<details>
-	<summary>See functions</summary>
-		
-		bzero
-		memchr
-		memcmp
-		memcpy
-		memmove
-		memset
-		strlcat
-		strlcpy
-		strlen
-		strchr
-		strnstr
-		strncmp
-		strrchr
-		strup
-	<\details>
+<details>
+<summary>See functions</summary>
+	
+	bzero
+	memchr
+	memcmp
+	memcpy
+	memmove
+	memset
+	strlcat
+	strlcpy
+	strlen
+	strchr
+	strnstr
+	strncmp
+	strrchr
+	strup
+</details>
 
 ### stdlib.h
-	<details>
-	<summary>See functions</summary>
-		
-		atoi
-		calloc
-	<\details>
+<details>
+<summary>See functions</summary>
+	
+	atoi
+	calloc
+</details>
 
 ## Restrictions applied:
 - Cannot use functions from other libraries
