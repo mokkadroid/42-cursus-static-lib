@@ -1,11 +1,12 @@
 # 42-cursus-static-lib
 
 ## Introduction
-Static C library composed of functions from stdlib.h, string.h, strings.h and ctype.h with my own code implementation.
+Static library composed out of functions from the Standard C Library with my own code implementation.
 
 ## Functions
+### ctype.h
 <details>
-<summary>ctype.h</summary>
+<summary>See functions</summary>
 	
 	isalpha
 	isdigit
@@ -15,10 +16,9 @@ Static C library composed of functions from stdlib.h, string.h, strings.h and ct
 	toupper
 	tolower
 <\details>
-
-
+### string.h // strings.h
 <details>
-<summary>string.h // strings.h</summary>
+<summary>See functions</summary>
 	
 	bzero
 	memchr
@@ -35,10 +35,9 @@ Static C library composed of functions from stdlib.h, string.h, strings.h and ct
 	strrchr
 	strup
 <\details>
-
-
+### stdlib.h
 <details>
-<summary>stdlib.h</summary>
+<summary>See functions</summary>
 	
 	atoi
 	calloc
