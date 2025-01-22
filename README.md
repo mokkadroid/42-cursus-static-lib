@@ -1,9 +1,9 @@
 # 42-cursus-static-lib
 
-##Introduction
+## Introduction
 Static C library composed of functions from stdlib.h, string.h, strings.h and ctype.h with my own code implementation.
 
-##Functions
+## Functions
 isalpha
 isdigit
 isalnum
@@ -30,7 +30,7 @@ atoi
 - Cannot use functions from other libraries
 - Cannot use ternary operators
 - Cannot use global variables
-###Exceptions
+### Exceptions
 The function malloc is used for calloc and strdup
 
 	
