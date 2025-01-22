@@ -6,6 +6,7 @@ Static C library composed of functions from stdlib.h, string.h, strings.h and ct
 ## Functions
 <details>
 <summary>ctype.h<summary>
+
 isalpha
 
 isdigit
@@ -19,9 +20,12 @@ isprint
 toupper
 
 tolower
+
 <\details>
+
 <details>
 <summary>string.h // strings.h<summary>
+
 bzero
 
 memchr
@@ -49,12 +53,16 @@ strncmp
 strrchr
 
 strup
+
 <\details>
+
 <details>
 <summary>stdlib.h<summary>
+
 atoi
 
 calloc
+
 <\details>
 
 ## Restrictions applied:
