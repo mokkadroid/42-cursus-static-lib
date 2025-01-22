@@ -1,7 +1,7 @@
 # 42-cursus-static-lib
 
 ## Introduction
-Static library composed out of functions from the Standard C Library with my own code implementation.
+Static library composed out of functions from the Standard C Library with my own code implementation as well as others.
 
 ## Functions
 ### ctype.h
@@ -77,7 +77,7 @@ Static library composed out of functions from the Standard C Library with my own
 #### ft_atoi
 #### ft_calloc
 </details>
-
+### Others
 ## Restrictions applied:
 - Cannot use functions from other libraries
 - Cannot use ternary operators
