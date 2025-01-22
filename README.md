@@ -8,13 +8,13 @@ Static library composed out of functions from the Standard C Library with my own
 <details>
 <summary>See functions</summary>
 
-#### isalnum
+#### ft_isalnum
 <details open>
 <summary><strong><em>Description</em></strong></summary>
 	Checks for an alphanumeric character, equivalent to (isalpha(c) || isdigit(c)).
 </details>
 		
-#### isalpha
+#### ft_isalpha
 <details open>
 <summary><strong><em>Description</em></strong></summary>
         Checks  for  an  alphabetic  character, either upper or lower case
@@ -26,24 +26,24 @@ Static library composed out of functions from the Standard C Library with my own
         Checks for a digit (0 through 9).
 </details>
 
-#### isascii
+#### ft_isascii
 <details open>
 <summary><strong><em>Description</em></strong></summary>
         Checks whether c is a 7-bit unsigned char value that fits into the ASCII character set.
 </details>
 
-#### isprint
+#### ft_isprint
 <details open>
 <summary><strong><em>Description</em></strong></summary>
         Checks for any printable character including space.
 </details>
 
-#### toupper
+#### ft_toupper
 <details open>
 <summary><strong><em>Description</em></strong></summary>
 </details>
 
-#### tolower
+#### ft_tolower
 <details open>
 <summary><strong><em>Description</em></strong></summary>
 </details>
@@ -54,28 +54,28 @@ Static library composed out of functions from the Standard C Library with my own
 <details>
 <summary>See fuctions</summary>
 	
-#### bzero
-#### memchr
-#### memcmp
-#### memcpy
-#### memmove
-#### memset
-#### strlcat
-#### strlcpy
-#### strlen
-#### strchr
-#### strnstr
-#### strncmp
-#### strrchr
-#### strup
+#### ft_bzero
+#### ft_memchr
+#### ft_memcmp
+#### ft_memcpy
+#### ft_memmove
+#### ft_memset
+#### ft_strlcat
+#### ft_strlcpy
+#### ft_strlen
+#### ft_strchr
+#### ft_strnstr
+#### ft_strncmp
+#### ft_strrchr
+#### ft_strup
 </details>
 
 ### stdlib.h
 <details>
 <summary>See functions</summary>
 	
-#### atoi
-#### calloc
+#### ft_atoi
+#### ft_calloc
 </details>
 
 ## Restrictions applied:
