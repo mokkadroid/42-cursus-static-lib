@@ -6,7 +6,6 @@ Static C library composed of functions from stdlib.h, string.h, strings.h and ct
 ## Functions
 <details>
 <summary>ctype.h
-
 isalpha
 
 isdigit
@@ -25,8 +24,7 @@ tolower
 
 <details>
 <summary>string.h // strings.h
-
-bzero
+	bzero
 
 memchr
 
@@ -58,8 +56,7 @@ strup
 
 <details>
 <summary>stdlib.h
-
-atoi
+	atoi
 
 calloc
 
