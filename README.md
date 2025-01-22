@@ -5,8 +5,8 @@ Static library composed out of functions from the Standard C Library with my own
 
 ## Functions
 ### ctype.h
-	<details>
-	<summary>See functions</summary>
+<details>
+<summary>See functions</summary>
 		
 		isalpha
 		isdigit
@@ -15,7 +15,7 @@ Static library composed out of functions from the Standard C Library with my own
 		isprint
 		toupper
 		tolower
-	<\details>
+<\details>
 
 ### string.h // strings.h
 	<details>
