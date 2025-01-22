@@ -5,7 +5,7 @@ Static C library composed of functions from stdlib.h, string.h, strings.h and ct
 
 ## Functions
 <details>
-<summary>ctype.h<summary>
+<summary>ctype.h
 
 isalpha
 
@@ -24,7 +24,7 @@ tolower
 <\details>
 
 <details>
-<summary>string.h // strings.h<summary>
+<summary>string.h // strings.h
 
 bzero
 
@@ -57,7 +57,7 @@ strup
 <\details>
 
 <details>
-<summary>stdlib.h<summary>
+<summary>stdlib.h
 
 atoi
 
