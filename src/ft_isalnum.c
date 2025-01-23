@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lumarti3 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 15:12:52 by lumarti3          #+#    #+#             */
-/*   Updated: 2025/01/21 15:12:54 by lumarti3         ###   ########.fr       */
+/*   Created: 2025/01/21 15:08:47 by lumarti3          #+#    #+#             */
+/*   Updated: 2025/01/21 15:08:50 by lumarti3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-size_t	ft_strlen(const char *s)
-{
-	int	i;
 
-	if (!s)
-		return (0);
-	while (s[i] != '\0')
-		i++;
-	return (i);
+/**
+ * ft_isalnum: checks for alphanumeric char
+ */
+
+int ft_isalnum(int c)
+{
+    if (c >= '0' && c <= '9')
+        return 8;
+    else if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+        return 8;
+    return 0;  
 }

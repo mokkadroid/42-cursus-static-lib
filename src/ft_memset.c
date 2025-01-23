@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lumarti3 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 15:12:52 by lumarti3          #+#    #+#             */
-/*   Updated: 2025/01/21 15:12:54 by lumarti3         ###   ########.fr       */
+/*   Created: 2025/01/21 15:11:16 by lumarti3          #+#    #+#             */
+/*   Updated: 2025/01/21 15:11:18 by lumarti3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-size_t	ft_strlen(const char *s)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	int	i;
-
+	unsigned char	*mem;
+	mem = (unsigned char*)s;
 	if (!s)
-		return (0);
-	while (s[i] != '\0')
-		i++;
-	return (i);
+		return;
+	while(n > 0)
+	{
+		*mem = c;
+		mem++;
+		n--;
+	}
 }
+
