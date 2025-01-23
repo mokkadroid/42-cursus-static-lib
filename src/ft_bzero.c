@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lumarti3 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 15:12:52 by lumarti3          #+#    #+#             */
-/*   Updated: 2025/01/21 15:12:54 by lumarti3         ###   ########.fr       */
+/*   Created: 2025/01/21 15:07:52 by lumarti3          #+#    #+#             */
+/*   Updated: 2025/01/21 15:07:56 by lumarti3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-size_t	ft_strlen(const char *s)
-{
-	int	i;
 
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char	*mem;
+
+	mem = (unsigned char*)s;
 	if (!s)
-		return (0);
-	while (s[i] != '\0')
-		i++;
-	return (i);
+		return;
+	while(n > 0)
+	{
+		*mem = '\0';
+		mem++;
+		n--;
+	}
+
 }
