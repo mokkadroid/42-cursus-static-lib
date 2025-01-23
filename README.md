@@ -79,6 +79,11 @@ Static library composed out of functions from the Standard C Library with my own
 </details>
 
 ### Others
+### string.h // strings.h
+<details>
+<summary>See fuctions</summary>
+</details>
+
 ## Restrictions applied:
 - Cannot use functions from other libraries
 - Cannot use ternary operators
