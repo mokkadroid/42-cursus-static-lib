@@ -1,34 +1,23 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lumarti3 <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 15:08:06 by lumarti3          #+#    #+#             */
-/*   Updated: 2025/01/23 13:43:33 by lumarti3         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 #include <stdlib.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int		i;
+	int	i;
 	void	*p;
-	char	*iter;
+	unsigned char	*iter;/* why unsigned char? because of its size: 1 Byte */
 
 	if (nmemb < 1 || size < 1)
-		return (NULL);
-	p = NULL;
-	p = malloc(nmemb * size);
+		return NULL;
+	p = NULL; /* We set p to null to avoid dangling ptrs */
+	p = malloc(nmemb*size);
 	if (!p)
-		return (NULL);
+		return NULL;
 	iter = p;
-	i = 0;
+	i = 0; /* Here we assign 0 to each byte of the array */
 	while (i < (nmemb * size))
 	{
 		iter[i] = 0;
 		i++;
 	}
-	return (p);
+	return p;
 }
