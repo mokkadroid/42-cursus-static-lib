@@ -84,9 +84,11 @@ Static library composed out of functions from the Standard C Library with my own
 </details>
 
 ## Restrictions applied:
-- Cannot use functions from other libraries
-- Cannot use ternary operators
-- Cannot use global variables
+Cannot use functions from other libraries
+
+Cannot use ternary operators
+
+Cannot use global variables
 ### Exceptions
 The function malloc is used for calloc and strdup
 
