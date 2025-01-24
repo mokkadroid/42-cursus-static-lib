@@ -9,6 +9,7 @@
 /*   Updated: 2025/01/21 15:10:44 by lumarti3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

@@ -9,5 +9,9 @@
 /*   Updated: 2025/01/21 15:13:29 by lumarti3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
+int strncmp(const char *s1, const char *s2, size_t n)
+{
 
+}
