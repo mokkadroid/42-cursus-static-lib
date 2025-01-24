@@ -81,6 +81,18 @@ Static library composed out of functions from the Standard C Library with my own
 ### Others
 <details>
 <summary>See fuctions</summary>
+	
+#### ft_itoa
+#### ft_putchar_fd
+#### ft_putendl_fd
+#### ft_putnbr_fd
+#### ft_putstr_fd
+#### ft_split
+#### ft_strjoin
+#### ft_strmapi
+#### ft_strteri
+#### ft_strtrim
+#### ft_substr
 </details>
 
 ## Restrictions applied:
@@ -90,6 +102,6 @@ Cannot use ternary operators
 
 Cannot use global variables
 ### Exceptions
-The function malloc is used for calloc and strdup
+The function malloc is used for calloc and strdup and write from unistd.h for 'Others' functions when required
 
 	
