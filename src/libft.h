@@ -1,5 +1,5 @@
-#ifndef _LIBFT_H
-#define _LIBFT_H
+#ifndef LIBFT_H
+#define LIBFT_H
 #include <stdlib.h>
 #include <unistd.h>
 
