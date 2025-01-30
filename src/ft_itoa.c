@@ -20,7 +20,7 @@
  * Returns the absolute value of a signed integer
  */
 
-static int		absolute(int n);
+static int	absolute(int n);
 
 /**
  * Name: decomp

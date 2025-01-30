@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static short is_member(char const *set, char const c)
+static short	is_member(char const *set, char const c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (set[i])
@@ -28,7 +28,7 @@ static short is_member(char const *set, char const c)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
-    int		start;
+	int		start;
 	int		end;
 	char	*trim;
 	

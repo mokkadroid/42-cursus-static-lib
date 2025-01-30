@@ -11,15 +11,15 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    int		i;
-    char	*modif;
+	int		i;
+	char	*modif;
 
-    i = 0;
-    while (s[i] != '\0')
-        i++;
-    modif = (char *)malloc(sizeof(char) * (i + 1));
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	modif = (char *)malloc(sizeof(char) * (i + 1));
 	if (!modif)
 		return (NULL);
 	modif[i] = '\0';
