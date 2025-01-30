@@ -6,10 +6,25 @@
 /*   By: lumarti3 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:05:29 by lumarti3          #+#    #+#             */
-/*   Updated: 2025/01/24 17:05:35 by lumarti3         ###   ########.fr       */
+/*   Updated: 2025/01/30 15:04:27 by lumarti3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
+static void	junk_cleaner( void *s1 , void **s2, int idx)
+{
+	if (s1)
+		free(s1);
+	if (s2)
+	{
+		while (idx >= 0)
+		{
+			free(s2[idx]);
+				idx--;
+		}
+		free(idx);
+	}
+}
 
 static int	slices_count(char const *s, char c)
 {
@@ -84,15 +99,10 @@ char	**ft_split(char const *s, char c)
 	while (i < count)
 	{
 		split[i] = (char *)malloc(sizeof(char) * idx[j+1]);
-		if (!split)
+		if (!split[i])
 		{
-			while (i >= 0)
-			{
-				free(split[i]);
-				i--;
-			}
-			free(split);
-			free(idx);
+			junk_cleaner(idx, split, i-1);
+			return (NULL);
 		}
 		fill_in(s, split[i], &i, idx[j], idx[j+1]);
 		i++;
@@ -101,4 +111,3 @@ char	**ft_split(char const *s, char c)
 	free(idx);
 	return (split);
 }
-

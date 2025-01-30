@@ -6,7 +6,7 @@
 /*   By: lumarti3 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:03:54 by lumarti3          #+#    #+#             */
-/*   Updated: 2025/01/24 17:04:17 by lumarti3         ###   ########.fr       */
+/*   Updated: 2025/01/30 15:07:54 by lumarti3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -42,3 +42,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	return (join);
 }
+

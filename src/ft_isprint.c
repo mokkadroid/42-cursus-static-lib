@@ -9,8 +9,6 @@
 /*   Updated: 2025/01/21 15:10:11 by lumarti3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
-
 int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)/* el char 127, DEL, no es printeable*/

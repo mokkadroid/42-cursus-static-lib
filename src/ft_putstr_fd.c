@@ -6,9 +6,10 @@
 /*   By: lumarti3 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 19:27:35 by lumarti3          #+#    #+#             */
-/*   Updated: 2025/01/24 19:27:37 by lumarti3         ###   ########.fr       */
+/*   Updated: 2025/01/30 15:03:46 by lumarti3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
@@ -20,4 +21,3 @@ void	ft_putstr_fd(char *s, int fd)
 	    i++;
 	write(fd, s, (i+1));
 }
-
