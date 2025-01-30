@@ -4,32 +4,67 @@
 #include <string.h>
 #include <ctype.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static int	slices_count(char const *s, char c)
 {
-	char			*sb;
-	unsigned int	i;
-	unsigned int	j;
+	int		i;
+	int		count;
 
-	sb = NULL;
-	sb = (char *)malloc(sizeof(char) * (len + 1));
-	if (!sb)
-		return NULL;
-	i = start;
-	j=0;
-	while (j < len && s[i] != '\0')
+	if(!s)
+		return (0);
+	count = 1;
+	i = 1;
+	while (s[i] != '\0')
 	{
-		sb[j] = s[i];
-		j++;
+		if (s[i - 1] != c && s[i] == c && s[i + 1] != '\0')
+			count ++;
 		i++;
 	}
-	sb[j] = '\0';
-	return (sb);
+	return (count);
+}
+
+static int	*slices_idx(char const *s, char c, int count)
+{
+	int	i;
+	int	j;
+	int size;
+	int *slices;
+
+	i = 0;
+	j = 0;
+	size = 1;
+	slices = (int *) malloc(sizeof(int) * count * 2);
+	if (!slices)
+		return (NULL);
+	while (s[i] != '\0')
+	{
+		if (i != 0 && s[i] == c)
+		{
+			slices[j + 1] = size;
+			j += 2;
+		} 
+		else if ((s[i] != c && i > 0 && s[i - 1] == c) || (!i && s[i] != c))
+		{
+			slices[j] = i;
+			size = 1;
+		} 
+		else if (s[i] != c)
+				size++;
+		i++;
+	}
+	slices[j + 1] = size;
+	return (slices);
 }
 
 int main(void)
 {
-	char str[] = "0123456789ABCDEF", *s=NULL;
-	s = ft_substr(str, 2, 18);
-	printf("ft: %s\nlb: %s\n", s, str);
+	int *idx = NULL, n;
+	char s[] = "jbvbdAehbAjbA", c = 'A';
+	for (size_t i = 0; i < 15; i++)
+		if (s[i] == c) printf("%ld ", i);
+	n = slices_count(s, c); 
+	idx = slices_idx(s, c, n);
+
+	for (int i = 0; i < n * 2 - 1; i+= 2)
+		printf("\n[%d, %d]", idx[i], idx[i+1]);
 	return 0;
 }
