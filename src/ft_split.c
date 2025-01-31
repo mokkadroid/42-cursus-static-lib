@@ -11,19 +11,65 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static void	junk_cleaner( void *s1 , void **s2, int idx)
+static void	junk_cleaner(char **s2, int idx);
+
+static char	*slice_filler(char const *s, char c, int *shift);
+
+static int	slices_count(char const *s, char c);
+
+char	**ft_split(char const *s, char c)
 {
-	if (s1)
-		free(s1);
-	if (s2)
-	{
-		while (idx >= 0)
+	int		i;
+	int		j;
+	int		shift;
+	int		count;
+	char	**split;
+
+	count = slices_count(s, c);
+	split = (char **)malloc(sizeof(char *) * count);
+	if (!split)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (j < count && s[i])
+	{	
+		split[j] = slice_filler(&s[i], c, &shift);
+		if (!split[j])
 		{
-			free(s2[idx]);
-				idx--;
+			junk_cleaner(split, j - 1);
+			return (NULL);
 		}
-		free(idx);
+		j++;
+		i += shift;
 	}
+	return (split);
+}
+
+static char	*slice_filler(char const *s, char c, int *shift)
+{
+	int i;
+	char *slice;
+
+	i = 0;
+	*shift = (*s == c);
+	s += (*s == c);
+	while (*s != c && *s)
+	{
+		i++;
+		s++;
+	}
+	*shift += i;
+	slice = (char *)malloc(sizeof(char) * (i + 1));
+	if (!slice)
+		return (NULL);
+	slice[--i] = '\0';
+	s--;
+	while (i >= 0)
+	{
+		slice[i--] = *s;
+		s--;
+	}
+	return (slice);
 }
 
 static int	slices_count(char const *s, char c)
@@ -37,77 +83,21 @@ static int	slices_count(char const *s, char c)
 	i = 1;
 	while (s[i] != '\0')
 	{
-		if (s[i - 1] != c && s[i] == c && s[i + 1] != '\0')
-			count ++;
+		count += (s[i - 1] != c && s[i] == c && s[i + 1]);
 		i++;
 	}
 	return (count);
 }
 
-static int	*slices_idx(char const *s, char c, int count)
+static void	junk_cleaner(char **s2, int idx)
 {
-	int	i;
-	int	j;
-	int size;
-	int *slices;
-
-	i = 0;
-	j = 0;
-	size = 1;
-	slices = (int *) malloc(sizeof(int) * count * 2);
-	if (!slices)
-		return (NULL);
-	while (s[i] != '\0')
+	if (s2)
 	{
-		if (i != 0 && s[i] == c)
+		while (idx >= 0)
 		{
-			slices[j + 1] = size;
-			j += 2;
-		} 
-		else if ((s[i] != c && i > 0 && s[i - 1] == c) || !i && s[i] != c)
-		{
-			slices[j] = i;
-			size = 1;
-		} 
-		else if (s[i] != c)
-				size++;
-		i++;
-	}
-	return (slices);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	int		count;
-	int		i;
-	int		j;
-	int		*idx;
-	char	**split;
-
-	count = slices_count(s, c);
-	split = (char **)malloc(sizeof(char *) * count);
-	if (!split)
-		return (NULL);
-	idx = slices_idx(s, c, count);
-	if (!idx)
-	{
-		free(split);
-		return (NULL);
-	}
-	i = 0;
-	j = 0;
-	while (i < count)
-	{
-		split[i] = (char *)malloc(sizeof(char) * idx[j+1]);
-		if (!split[i])
-		{
-			junk_cleaner(idx, split, i-1);
-			return (NULL);
+			free(s2[idx]);
+			idx--;
 		}
-		fill_in(s, split[i], &i, idx[j], idx[j+1]);
-		i++;
-		j+=2;
+		free(s2);
 	}
-	free(idx);
-	return (split);
 }
