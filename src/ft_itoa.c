@@ -49,6 +49,8 @@ char	*ft_itoa(int n)
 	int		count;
 	char	*str;
 
+	if (n == -2147483648)
+		return ("-2147483648");
 	i = 0;
 	count = (n * (1 - 2 * (n < 0)));
 	while (count > 0)
@@ -57,12 +59,10 @@ char	*ft_itoa(int n)
 		i++;
 	}
 	i += (n < 0);
-	str = NULL;
 	str = (char *)malloc(sizeof(char) * (i + 1));
 	if (!str)
 		return (NULL);
-	str[i] = '\0';
-	i--;
+	str[i--] = '\0';
 	decomp(str, n, i);
 	return (str);
 }

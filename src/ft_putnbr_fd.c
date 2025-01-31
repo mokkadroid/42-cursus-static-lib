@@ -33,6 +33,11 @@ void	ft_putnbr_fd(int n, int fd)
 	char	c[12];
 
 	i = 0;
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 12);
+		return ;
+	}
 	count = (n * (1 - 2 * (n < 0)));;
 	while (count > 0)
 	{

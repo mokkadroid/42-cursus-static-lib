@@ -16,8 +16,6 @@ void	ft_bzero(void *s, size_t n)
 	unsigned char	*mem;
 
 	mem = (unsigned char*)s;
-	if (!s)
-		return;
 	while(n > 0)
 	{
 		*mem = '\0';
