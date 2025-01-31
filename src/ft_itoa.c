@@ -9,7 +9,6 @@
 /*   Updated: 2025/01/30 14:44:51 by lumarti3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 /********** Private functions declaration **********/
@@ -27,8 +26,8 @@
  * (1 - 2 * 1) = -1 if n < 0 or (1 - 2 * 0) = 1 if not,
  *  which will always return a positive value.
  */
-
-static int		absolute(int n);
+/* static int		absolute(int n);*/
+/*No longer in use, the branchless statement is 1 line */
 
 /**
  * Name: decomp
@@ -51,14 +50,13 @@ char	*ft_itoa(int n)
 	char	*str;
 
 	i = 0;
-	count = absolute(n);
+	count = (n * (1 - 2 * (n < 0)));
 	while (count > 0)
 	{
 		count /= 10;
 		i++;
 	}
-	if (n < 0)
-		i++;
+	i += (n < 0);
 	str = NULL;
 	str = (char *)malloc(sizeof(char) * (i + 1));
 	if (!str)
@@ -69,11 +67,6 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-static int	absolute(int n)
-{
-	return (n * (1 - 2 * (n < 0)));
-}
-
 static void	decomp(char *s, int n, int pos)
 {
 	int	i;
@@ -81,13 +74,9 @@ static void	decomp(char *s, int n, int pos)
 	int	dec;
 
 	i = pos;
-	dec = absolute(n);
-	lim = 0;
-	if (n < 0)
-	{
-		s[0] = '-';
-		lim = 1;
-	}
+	dec = (n * (1 - 2 * (n < 0)));
+	lim = (n < 0);
+	s[0] = ('-' * (n < 0));
 	while (i >= lim && dec > 0)
 	{
 		s[i] = ((dec % 10) + 48);

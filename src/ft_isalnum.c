@@ -9,10 +9,7 @@
 /*   Updated: 2025/01/21 15:08:50 by lumarti3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/**
- * ft_isalnum: checks for alphanumeric char
- */
+#include "libft.h"
 
 int ft_isalnum(int c)
 {

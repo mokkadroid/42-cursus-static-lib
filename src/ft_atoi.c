@@ -9,10 +9,7 @@
 /*   Updated: 2025/01/21 15:07:34 by lumarti3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/**
- * ft_atoi_aux: converts ascii code to int value
- */
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
