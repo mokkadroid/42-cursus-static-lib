@@ -13,7 +13,7 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int		i;
+	size_t		i;
 	void	*p;
 	char	*iter;
 

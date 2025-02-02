@@ -11,30 +11,21 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	i;
-	int	j;
-	int	count;
+	size_t	i;
+	int		count;
 
 	if (!dst || !src)
 		return (0);
 	i = 0;
-	while (dst[i] != '\0')
-		i++;
-	count = i;
-	j = 0;
-	while (src[j] != '\0')
-		j++;
-	count += j;
-	if (i >= size - 1)
-		return (count);
-	j = 0;
-	while (i < size - 1 && src[j] != '\0')
+	count = 0;
+	while (src[count])
+		count++;
+	while (i < size)
 	{
-		dst[i] = src[j];
-		j++;
-		i++;
+		dst[i] = src[i];
+		++i;
 	}
 	dst[i] = '\0';
 	return (count);

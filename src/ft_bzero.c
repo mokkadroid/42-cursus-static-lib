@@ -13,14 +13,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*mem;
+	size_t i;
 
-	mem = (unsigned char*)s;
-	while(n > 0)
-	{
-		*mem = '\0';
-		mem++;
-		n--;
-	}
-
+	i = 0;
+	while (i < n)
+		((unsigned char *)s)[i++] = '\0';
 }
