@@ -6,16 +6,15 @@
 /*   By: lumarti3 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 15:08:06 by lumarti3          #+#    #+#             */
-/*   Updated: 2025/01/23 13:43:33 by lumarti3         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:33:31 by lumarti3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t		i;
+	size_t	i;
 	void	*p;
-	char	*iter;
 
 	if (nmemb < 1 || size < 1)
 		return (NULL);
@@ -23,11 +22,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	p = malloc(nmemb * size);
 	if (!p)
 		return (NULL);
-	iter = p;
 	i = 0;
 	while (i < (nmemb * size))
 	{
-		iter[i] = 0;
+		((unsigned char *)p)[i] = 0;
 		i++;
 	}
 	return (p);

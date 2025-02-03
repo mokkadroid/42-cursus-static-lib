@@ -21,7 +21,8 @@ char	*ft_strrchr(const char *s, int c)
 	count = -1;
 	while (s[i] != '\0')
 	{
-		count = i * (s[i] == c);
+		if (s[i] == c)
+			count = i;
 		i++;
 	}
 	p = &s[count];

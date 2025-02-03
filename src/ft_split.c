@@ -6,16 +6,51 @@
 /*   By: lumarti3 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:05:29 by lumarti3          #+#    #+#             */
-/*   Updated: 2025/01/30 15:04:27 by lumarti3         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:49:22 by lumarti3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
+/********** Private functions declaration **********/
+/**
+ * Name: junk_cleaner
+ * Parameter:
+ * s2 -> pointer to array of pointers
+ * idx -> position of the array from which it starts to
+ * 		  the pointers.
+ * Description:
+ * Frees an array of pointers
+ */
+
 static void	junk_cleaner(char **s2, int idx);
+
+/**
+ * Name: slice_filler
+ * Parameter:
+ * s -> string to find the slice
+ * c -> separator character
+ * shift -> shift needed to override the separator c
+ * Description:
+ * Returns a string with the characters found in s before encountering
+ * the separator c or the EOS sign. Also stores in shift the displacement
+ * needed to apply to s in case it encounters the separator char to 
+ * override it to keep analysing the string.  
+ */
 
 static char	*slice_filler(char const *s, char c, int *shift);
 
+/**
+ * Name: slices_count
+ * Parameter:
+ * s -> slice with character c as separator
+ * c -> separator character
+ * Description:
+ * Returns the number of subtrings/slices in s with c as separator
+ */
+
 static int	slices_count(char const *s, char c);
+
+/***************************************************/
 
 char	**ft_split(char const *s, char c)
 {
@@ -32,7 +67,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	while (j < count && s[i])
-	{	
+	{
 		split[j] = slice_filler(&s[i], c, &shift);
 		if (!split[j])
 		{
@@ -47,8 +82,8 @@ char	**ft_split(char const *s, char c)
 
 static char	*slice_filler(char const *s, char c, int *shift)
 {
-	int i;
-	char *slice;
+	int		i;
+	char	*slice;
 
 	i = 0;
 	*shift = (*s == c);
@@ -74,10 +109,10 @@ static char	*slice_filler(char const *s, char c, int *shift)
 
 static int	slices_count(char const *s, char c)
 {
-	int		i;
-	int		count;
+	int	i;
+	int	count;
 
-	if(!s)
+	if (!s)
 		return (0);
 	count = 1;
 	i = 1;

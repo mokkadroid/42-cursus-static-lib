@@ -6,14 +6,14 @@
 /*   By: lumarti3 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 15:07:52 by lumarti3          #+#    #+#             */
-/*   Updated: 2025/01/21 15:07:56 by lumarti3         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:31:31 by lumarti3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)

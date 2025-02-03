@@ -6,7 +6,7 @@
 /*   By: lumarti3 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 19:28:34 by lumarti3          #+#    #+#             */
-/*   Updated: 2025/01/30 14:59:06 by lumarti3         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:46:52 by lumarti3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -22,7 +22,7 @@
  * Returns the absolute value of a signed integer
  */
 
-static void		decomp(char *s, int n, int pos);
+static void	decomp(char *s, int n, int pos);
 
 /***************************************************/
 
@@ -38,7 +38,7 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, "-2147483648", 12);
 		return ;
 	}
-	count = (n * (1 - 2 * (n < 0)));;
+	count = (n * (1 - 2 * (n < 0)));
 	while (count > 0)
 	{
 		count /= 10;

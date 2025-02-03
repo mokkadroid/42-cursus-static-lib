@@ -24,10 +24,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 	while (s2[j] != '\0')
 		j++;
-	join = (char *)malloc(sizeof(char)*(i+j+1));
+	join = (char *)malloc(sizeof(char) * (i + j + 1));
 	if (!join)
 		return (NULL);
-	join[i+j] = '\0';
+	join[i + j] = '\0';
 	k = (i--) + (j--) - 1;
 	while (k >= 0)
 	{
@@ -38,4 +38,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	return (join);
 }
-

@@ -11,6 +11,59 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/********** Private functions declaration **********/
+/**
+ * Name: is_member
+ * Parameter:
+ * set -> set of chars in string format (ends in '\0')
+ * c -> c to check whether it is present or not in the set
+ * Description:
+ * Checks if c pertains to a given set of chars, returns 1 
+ * if true, 0 if false.
+ */
+
+static short	is_member(char const *set, char const c);
+
+/**
+ * Name: get_extremes
+ * Parameter:
+ * s -> input string
+ * set -> set of limiter chars
+ * fi -> position of the first char (starting from the index 0
+ * 		 of the string) that is not a member of the set
+ * li -> position of the first char (starting from the index size - 1
+ * 		 of the string) that is not a member of the set
+ * Description:
+ * Stores in fi the initial position of the trim and the last 
+ * position of the trim in li.
+ */
+
+static void		get_extremes(char const *s, char const *set, int *fi, int *li);
+
+/***************************************************/
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	int		i;
+	int		start;
+	int		end;
+	char	*trim;
+
+	get_extremes(s1, set, &start, &end);
+	i = 0;
+	trim = (char *)malloc(sizeof(char) * ((end - start) + 1));
+	if (!trim)
+		return (NULL);
+	while (start <= end)
+	{
+		trim[i] = s1[start];
+		start++;
+		i++;
+	}
+	trim[i + 1] = '\0';
+	return (trim);
+}
+
 static short	is_member(char const *set, char const c)
 {
 	int	i;
@@ -41,26 +94,4 @@ static void	get_extremes(char const *s, char const *set, int *fi, int *li)
 		j--;
 	*fi = i;
 	*li = j;
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	int		i;
-	int		start;
-	int		end;
-	char	*trim;
-
-	get_extremes(s1, set, &start, &end);
-	i = 0;
-	trim = (char *)malloc(sizeof(char) * ((end - start) + 1));
-	if (!trim)
-		return (NULL);
-	while (start <= end)
-	{
-		trim[i] = s1[start];
-		start++;
-		i++;
-	}
-	trim[i + 1] = '\0';
-	return (trim);
 }
