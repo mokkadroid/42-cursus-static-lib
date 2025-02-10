@@ -1,9 +1,9 @@
 CC		=	gcc -g
 CFLAGS	=	-Wall -Wextra -Werror
 NAME	=	libft.a
-SRC_D	=	src/
-OBJ_D	=	obj/
-INC_D	=	.
+SRC_D	=	./
+OBJ_D	=	./
+INC_D	=	. #directory for the includes
 SRC_N	=	ft_atoi.c ft_bzero.c ft_calloc.c \
 				ft_isalnum.c ft_isalpha.c ft_isascii.c \
 				ft_isdigit.c ft_isprint.c ft_memchr.c \
@@ -14,12 +14,10 @@ SRC_N	=	ft_atoi.c ft_bzero.c ft_calloc.c \
 				ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strmapi.c \
 				ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c \
 				ft_tolower.c ft_toupper.c
-SRC		=	$(addprefix $(SRC_D), $(SRC_N)) #relative path of the src files
+SRC		=	$(addprefix $(SRC_D), $(SRC_N)) #relative path of the src files, for now is not needed
 OBJ_N	=	$(SRC_N:.c=.o) #the of the objects are the of the src files
 OBJ		=	$(addprefix $(OBJ_D), $(OBJ_N)) #relative path of objects
 
-#for testing DELETE B4 SUBMIT
-EXE = trial
 
 all : $(NAME)
 
@@ -35,7 +33,8 @@ $(OBJ_D)%.o: $(SRC_D)%.c
 
 clean :
 	@rm -f $(OBJ)
-	@rm -r $(OBJ_D)
+# REMOVE THIS (v) if OBJ_D = ./
+#	@rm -r $(OBJ_D) 
 
 fclean: clean 
 	@rm -f core $(NAME)
