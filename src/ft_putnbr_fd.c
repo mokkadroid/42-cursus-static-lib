@@ -46,7 +46,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	i += (n < 0);
 	c[i] = '\0';
-	count = i;
+	count = i + (!i);
 	i--;
 	decomp(c, n, i);
 	write(fd, c, count);
@@ -58,6 +58,12 @@ static void	decomp(char *s, int n, int pos)
 	int	lim;
 	int	dec;
 
+	if (!n)
+	{
+		s[0] = '0';
+		s[1] = '\0';
+		return ;
+	}
 	i = pos;
 	dec = (n * (1 - 2 * (n < 0)));
 	lim = (n < 0);

@@ -13,23 +13,6 @@
 
 /********** Private functions declaration **********/
 /**
- * Name: absolute
- * Parameters:
- * n -> integer to calculate the absolute value
- * Description:
- * Returns the absolute value of a signed integer applying 
- * branchless programming: (n * (1 - 2 * (n < 0)))
- * How does this works?
- * The expression "n < 0" acts similar to the operators || 
- * and &&, returning 1 if the condition is met or not.
- * Therefore, (1 - 2 * (n < 0)) will two pssible results: 
- * (1 - 2 * 1) = -1 if n < 0 or (1 - 2 * 0) = 1 if not,
- *  which will always return a positive value.
- */
-/* static int		absolute(int n);*/
-/*No longer in use, the branchless statement is 1 line */
-
-/**
  * Name: decomp
  * Parameter:
  * n -> number to decompose in ASCII codes
@@ -51,6 +34,8 @@ char	*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return ("-2147483648");
+	if (!n)
+		return ("0");
 	i = 0;
 	count = (n * (1 - 2 * (n < 0)));
 	while (count > 0)

@@ -16,6 +16,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		i;
 	char	*modif;
 
+	if (!*s || !f)
+		return ((char *)s);
 	i = 0;
 	while (s[i] != '\0')
 		i++;

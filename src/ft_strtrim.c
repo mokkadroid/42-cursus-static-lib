@@ -49,6 +49,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	char	*trim;
 
+	if (!*s1)
+		return ((char *)s1);
 	get_extremes(s1, set, &start, &end);
 	i = 0;
 	trim = (char *)malloc(sizeof(char) * ((end - start) + 1));

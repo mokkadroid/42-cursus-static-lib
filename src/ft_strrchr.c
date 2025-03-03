@@ -15,8 +15,9 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int			i;
 	int			count;
-	const char	*p;
 
+	if (!*s)
+		return ((char *)s);
 	i = 0;
 	count = -1;
 	while (s[i] != '\0')
@@ -25,8 +26,9 @@ char	*ft_strrchr(const char *s, int c)
 			count = i;
 		i++;
 	}
-	p = &s[count];
-	if (count < 0)
-		p = NULL;
-	return ((char *)p);
+	if (c == '\0')
+		return ((char *)&s[i]);
+	else if (c < 0)
+		return (NULL);
+	return ((char *)&s[count]);
 }

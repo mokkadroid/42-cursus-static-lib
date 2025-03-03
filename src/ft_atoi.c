@@ -23,17 +23,15 @@ int	ft_atoi(const char *nptr)
 	pow = 1;
 	while (nptr[j] != '\0')
 	{
-		if (nptr[j] < '0' || nptr[j] > '9')
-			return (0);
-		pow *= 10;
-		j++;
+		pow *= 10/(10 - (9 * (nptr[j] >= '0' && nptr[j] <= '9')));
+		pow *= (1 - (2 * (nptr[j++] == '-')));
 	}
 	num = 0;
 	j = 0;
 	while (nptr[j] != '\0')
 	{
-		num += ((nptr[j] - 48) * (pow / 10));
-		pow /= 10;
+		num += ((nptr[j] - 48) * (pow / 10) * (nptr[j] >= '0' && nptr[j] <= '9'));
+		pow /= 10/(10 - (9 * (nptr[j] >= '0' && nptr[j] <= '9')));;
 		j++;
 	}
 	return (num);
