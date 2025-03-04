@@ -1,4 +1,4 @@
-CC		=	gcc -g
+CC		=	cc -g
 CFLAGS	=	-Wall -Wextra -Werror
 NAME	=	libft.a
 SRC_D	=	src/
