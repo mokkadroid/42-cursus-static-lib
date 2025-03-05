@@ -59,7 +59,7 @@ static void	decomp(char *s, int n, int pos)
 	if (!dec)
 	{
 		s[pos] = 48;
-		return;
+		return ;
 	}
 	lim = (n < 0);
 	s[0] = ('-' * (n < 0));

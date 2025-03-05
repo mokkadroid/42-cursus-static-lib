@@ -11,28 +11,54 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+static int parse_str(const char *nptr, int *f, int *l);
+
 int	ft_atoi(const char *nptr)
 {
 	int	pow;
 	int	j;
+	int	i;
 	int	num;
 
 	if (!nptr)
 		return (0);
-	j = 0;
-	pow = 1;
-	while (nptr[j] != '\0')
-	{
-		pow *= 10/(10 - (9 * (nptr[j] >= '0' && nptr[j] <= '9')));
-		pow *= (1 - (2 * (nptr[j++] == '-')));
-	}
+	pow = parse_str(nptr, &i, &j);
 	num = 0;
-	j = 0;
 	while (nptr[j] != '\0')
 	{
-		num += ((nptr[j] - 48) * (pow / 10) * (nptr[j] >= '0' && nptr[j] <= '9'));
-		pow /= 10/(10 - (9 * (nptr[j] >= '0' && nptr[j] <= '9')));;
+		i = (nptr[j] >= '0' && nptr[j] <= '9');
+		num += ((nptr[j] - 48) * (pow / 10) * i);
+		pow /= 10 / (10 - (9 * i));
 		j++;
 	}
 	return (num);
+}
+
+static int parse_str(const char *nptr, int *f, int *l)
+{
+	int	i;
+	int pow;
+	int	numdig;
+	int plus;
+	int minus;
+	
+	i = 0;
+	numdig = 0;
+	plus = 0;
+	minus = 0;
+	while (nptr[i] != '\0')
+	{
+		if ((plus || minus) && (nptr[i] < '0' && nptr[i] > '9'))
+			return (0);
+		if (numdig && (nptr[i] < '0' && nptr[i] > '9'))
+			break;
+		numdig += (nptr[i] >= '0' && nptr[i] <= '9');
+		plus += (nptr[i] == '+');
+		minus += (nptr[i] == '-');
+		if ((plus && minus) || plus > 1 || minus > 1)
+			return (0);
+		*f = i * (numdig == 1);
+		*l = i;
+	}
+	return 1;
 }
