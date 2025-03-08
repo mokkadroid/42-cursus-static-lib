@@ -1,7 +1,7 @@
 # 42-cursus-static-lib
 
 ## Introduction
-Static library composed out of functions from the Standard C Library with my own code implementation as well as others.
+Static library composed out of functions from the Standard C Library with my own implementation as well as functions from other libraries.
 
 ## Functions
 ### ctype.h
