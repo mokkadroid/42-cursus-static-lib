@@ -35,7 +35,7 @@ void	ft_putnbr_fd(int n, int fd)
 	i = 0;
 	if (n == -2147483648)
 	{
-		write(fd, "-2147483648", 12);
+		write(fd, "-2147483648", 11);
 		return ;
 	}
 	count = (n * (1 - 2 * (n < 0)));
@@ -54,9 +54,9 @@ void	ft_putnbr_fd(int n, int fd)
 
 static void	decomp(char *s, int n, int pos)
 {
-	int	i;
-	int	lim;
-	int	dec;
+	int		i;
+	int		lim;
+	int		dec;
 
 	if (!n)
 	{

@@ -21,7 +21,6 @@
  * Description:
  * Frees an array of pointers
  */
-
 static void	junk_cleaner(char **s2, int idx);
 
 /**
@@ -36,18 +35,15 @@ static void	junk_cleaner(char **s2, int idx);
  * needed to apply to s in case it encounters the separator char to 
  * override it to keep analysing the string.  
  */
-
 static char	*slice_filler(char const *s, char c, int *shift);
 
 /**
  * Name: slices_count
- * Parameters:
- * s -> slice with character c as separator
- * c -> separator character
+ * @param s -> slice with character c as separator
+ * @param c -> separator character
  * Description:
  * Returns the number of subtrings/slices in s with c as separator
  */
-
 static int	slices_count(char const *s, char c);
 
 /**
@@ -59,7 +55,6 @@ static int	slices_count(char const *s, char c);
  * Returns the shift to add to the pointer of S to find non-separator
  * chars. 
  */
-
 static int	separator_shift(const char *s, char c);
 
 /***************************************************/
@@ -131,6 +126,8 @@ static int	slices_count(char const *s, char c)
 	i = (s[0] == c);
 	while (s[i] != '\0')
 	{
+		while (s[i] && s[i] != c)
+			i++;
 		count += ((s[i] != c && s[i - 1] == c) || (!i && s[i] != c));
 		i++;
 	}

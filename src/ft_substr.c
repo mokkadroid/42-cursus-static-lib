@@ -11,21 +11,27 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/**
+ * @warning MALLOC
+ */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*sb;
-	unsigned int	i;
-	unsigned int	j;
+	char	*sb;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (s[i])
+	j = ft_strlen(s);
+	while (start < j && s[start + i])
 		i++;
-	if (!*s || start >= i)
+	if (i < len)
+		len = i;
+	if (!*s || start >= j)
 		len = 0;
-	sb = (char *)malloc(sizeof(char) * (len + 1));
+	sb = (char *)ft_calloc(len + 1, sizeof(char));
 	if (!sb)
 		return (NULL);
-	j = len * (start >= i);
+	j = 0;
 	i = start;
 	while (j < len && s[i] != '\0')
 	{
@@ -33,6 +39,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		j++;
 		i++;
 	}
-	sb[j * (i != start)] = '\0';
 	return (sb);
 }

@@ -11,14 +11,21 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+void	freedom(void **ptr)
+{
+	if (*ptr)
+		free(*ptr);
+	*ptr = NULL;
+}
+freedom(((void **)&pointer));
+*/
+
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	size_t	i;
 	void	*p;
 
-	if (nmemb < 1 || size < 1)
-		return (NULL);
-	p = NULL;
 	p = malloc(nmemb * size);
 	if (!p)
 		return (NULL);
